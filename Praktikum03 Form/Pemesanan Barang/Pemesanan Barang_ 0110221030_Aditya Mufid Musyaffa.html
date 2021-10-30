@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan Barang</title>
+  <style>*{margin: 0; padding: 0; font-family: sans-serif;}</style>
+</head>
+
+<body style="background: #f2f1ef;">
+
+  <nav style=" margin: 8px auto; width: 100%;">
+    <ul style="list-style: none; display: flex; font-size: .7em; ">
+      <li style="margin: auto;"><a style="text-decoration: none; color: #f2f1ef; background: #201f1e; padding: 10px 100.3px;" href="">Home</a></li>
+      <li style="margin: auto;"><a style="text-decoration: none; color: #f2f1ef; background: #201f1e; padding: 10px 100.3px;" href="">Generate Link</a></li>
+      <li style="margin: auto;"><a style="text-decoration: none; color: #f2f1ef; background: #201f1e; padding: 10px 100.3px;" href="">Transaction History</a></li>
+      <li style="margin: auto;"><a style="text-decoration: none; color: #f2f1ef; background: #201f1e; padding: 10px 100.3px;" href="">Policy</a></li>
+      <li style="margin: auto;"><a style="text-decoration: none; color: #f2f1ef; background: #201f1e; padding: 10px 100.3px;" href="">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section style="display: flex; justify-content: space-evenly; width: 90%; margin: auto; margin: 50px 0 0 0;">
+    <figure>
+      <img src="MacbookAir.jpeg" alt="Macbook Air" width="300px" height="300px">
+      <form>
+        <button style="display:block; background: #697184; color: #f2f1ef; padding: 8px; margin: 10px 0 0 0; border: none; cursor: pointer;"
+        onclick="document.getElementById('prodimg').click()">Upload Picture</button>
+        <input type="file" id="prodimg" name="prodimg" style="visibility: hidden;">
+      </form>
+    </figure>
+
+    <form target="_blank">
+      <table border="0" style="width: 100%;">
+        <tr>
+          <td><label for="prod">Product</label></td>
+          <td>:</td>
+          <td><textarea cols="60" rows="1" id="prod" name="prog" style="padding: 3px; border-radius: 5px; border: none; margin-left: 10px;">Macbook Air $800</textarea></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Description</td>
+          <td style="vertical-align: top;">:</td>
+          <td><textarea cols="60" rows="8" style="padding: 3px; border-radius: 10px; border: none; margin-left: 10px"></textarea></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">Account Number</td>
+          <td style="vertical-align: middle;">:</td>
+          <td style="height: 50px; vertical-align: middle;">
+            <textarea cols="60" rows="1" placeholder="021 - 234 -567 - 890"
+            style="padding: 3px; border-radius: 5px; border: none; margin-left: 10px"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 50px;"><label for="bankopt">Bank</label></td>
+          <td>:</td>
+          <td>
+            <select name="bankopt" id="bankopt" style="border-radius: 5px; border: none; margin: 0 0 0 10px; vertical-align: middle; height: 30px;">
+              <option value="HSBC">HSBC</option>
+              <option value="BSI">BSI</option>
+              <option value="BCA">BCA</option>
+              <option value="BNI">BNI</option>
+              <option value="MANDIRI">MANDIRI</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="accholder">Account Holder</label></td>
+          <td>:</td>
+          <td><textarea id="accholder" placeholder="Name Here" style="padding: 3px; border-radius: 5px; border: none; margin-left: 10px"></textarea></td>
+        </tr>
+        <tr>
+          <td style="height: 30px; vertical-align: bottom"><label for="transnum">Transaction</label></td>
+          <td style="vertical-align: bottom">:</td>
+          <td style="vertical-align: bottom"><input type="number" name="transnum" id="transnum" min="1" value="1" 
+            style="border-radius: 5px; border: none; width: 8%; margin-left: 10px;"></td>
+        </tr>
+        <tr>
+          <td style="height: 10px;"></td>
+          <td style="vertical-align: text-top;"></td>
+          <td style="vertical-align: text-top;">
+            <p style="font-size: 12px; margin-left: 10px; vertical-align: bottom">* if the transaction is for 3 person, choose 3 from the drop-down list</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 50px;"></td>
+          <td></td>
+          <td>
+            <input type="checkbox" name="checksend1" id="checksend1" checked style="margin-left: 10px">
+            <label for="checksend1">Send to Mobile Phone</label>
+            <br>
+            <input type="checkbox" name="checksend2" id="checksend2" checked style="margin-left: 10px">
+            <label for="checksend2">Send to Email</label>
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 30px; vertical-align: bottom;"><label for="mobilephonesend">Send to Mobile Phone</label></td>
+          <td style="height: 30px; vertical-align: bottom;">:</td>
+          <td style="height: 30px; vertical-align: bottom;">
+            <input type="tel" id="mobilephonesend" name="mobilephonesend" placeholder="021 - 234 - 567" 
+            style="padding: 3px; border-radius: 5px; border: none; margin-left: 10px">
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 30px; vertical-align: bottom;"><label for="emailsend">Send to Email</label></td>
+          <td style="height: 30px; vertical-align: middle;">:</td>
+          <td style="height: 30px; vertical-align: bottom;">
+            <input type="email" id="emailsend" name="emailsend" placeholder="johndoe@gmail.com" 
+            style="padding: 3px; border-radius: 5px; border: none; margin-left: 10px">
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td colspan="2" style="height: 50px; vertical-align: middle;">
+            <input type="submit" name="submit" id="submit" value="Generate Link" 
+            style="background: rgb(135, 201, 68); color: aliceblue; border: none; padding: 8px; cursor: pointer; font-size: 14px;">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </section>
+
+</body>
+</html>

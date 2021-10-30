@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POD Aditya Mufid Musyaffa</title>
+  <style> * {margin: 0; padding: 0; box-sizing: border-box;} </style>
+</head>
+<body style="background: #A40001; font-family: cursive;">
+  
+  <header style="color: #1e1d1d; background: #FFD301; margin: 0; padding: 10px 20px;">
+    <h3>Black Goose Distro | Pizza-on-Demand</h3>
+    <p style="width: 40%;">Our 12" wood-fired pizzas are available for delivery. Build your custom pizza and we'll deliver it within an hour</>
+  </header>
+
+  <form action="/praktikum 3.1/pizza_checkout.html" method="post" target="_blank">
+    <fieldset style="border: none; background: #FFD301; color: #1e1d1d; 
+    padding: 10px; width: 30%; border-radius: 15px; margin: 20px 10px;">
+      <b>Your Information</b>
+      <table border="0">
+        <tr>
+          <td><label for="username">Name</label></td>
+          <td>: <input type="text" id="username" name="username" placeholder="John Doe"></td>
+        </tr>
+        <tr>
+          <td><label for="address">Address</label></td>
+          <td>: <input type="text" id="address" name="address"></td>
+        </tr>
+        <tr>
+          <td><label for="tel">Telephone Number</label></td>
+          <td>: <input type="tel" id="tel" name="tel" placeholder="021-234-567-891"></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td>: <input type="email" name="email" id="email"></td>
+        </tr>
+        <tr>
+          <td><label for="ins">Delivery Instructions</label></td>
+          <td>:</td>
+        </tr>
+        <tr>
+          <td colspan="2"><textarea maxlength="400" name="ins" id="ins" cols="44" rows="5"></textarea></td>
+        </tr>
+      </table>      
+    </fieldset>
+
+    <fieldset style="border: none; background: #FFD301; width: 30%; color: #1e1d1d; 
+    padding: 10px; border-radius: 15px; margin: 20px 10px;">
+      <h4>Design Your Dream Pizza :</h4>
+      <p style="margin: 5px 0 10px 0;">Pizza Specs</p>
+      <div>
+        <label for="crust">Crust (Choose One)</label>
+        <br>
+        <input type="radio" name="crust" id="crust1">
+        <label for="crust1">Classic White</label>
+        <br>
+        <input type="radio" name="crust" id="crust2">
+        <label for="crust2">Multigrain</label>
+        <br>
+        <input type="radio" name="crust" id="crust3">
+        <label for="crust3">Cheese-stuffed Crust</label>
+        <br>
+        <input type="radio" name="crust" id="crust4">
+        <label for="crust4">Glutten Free</label>
+      </div>
+      
+      <div style="margin: 20px 0 0 0;">
+        <label for="toppings">Toppings (Choose as many as you want) :</label>
+        <br>
+        <input type="checkbox" id="top1" checked>
+        <label for="top1">Red Sauce</label>
+        <br>
+        <input type="checkbox" id="top2">
+        <label for="top2">White Sauce</label>
+        <br>
+        <input type="checkbox" id="top3">
+        <label for="top3">Mozzarella Cheese</label>
+        <br>
+        <input type="checkbox" id="top4">
+        <label for="top4">Pepperoni</label>
+        <br>
+        <input type="checkbox" id="top5">
+        <label for="top5">Mushroom</label>
+        <br>
+        <input type="checkbox" id="top6">
+        <label for="top6">Peppers</label>
+        <br>
+        <input type="checkbox" id="top7">
+        <label for="top7">Anchovies</label>
+      </div>
+    </fieldset>
+
+    <fieldset style="border: none; background: #FFD301; width: 30%; color: #1e1d1d;
+    padding: 10px; border-radius: 15px; margin: 20px 10px;">
+      <b>Number</b>
+      <table border="0" style="margin: 5px 0 15px 0">
+        <tr>
+          <td><label for="num"></label>How Many Pizzas</td>
+          <td>: <input type="number" name="num" id="num" value="1" min="1" max="6"></td>
+        </tr>
+      </table>
+
+      <input type="submit" name="submit" id="submit" value="Bring me a pizza!" style="background: greenyellow; color: #1e1d1d; padding: 10px; border-radius: 5px;
+      cursor: pointer; margin: 0 10px 0 0;">
+      <input type="reset" name="reset" id="reset" value="Reset" style="background: #d1cdcd; color: #1e1d1d; padding: 10px; border-radius: 5px;
+      cursor: pointer;">
+    </fieldset>
+  </form>
+  
+  <figure>
+    <!-- <p  style="font-size: 4rem; position: absolute; left: 29%; bottom: 40%; transform: rotate(110deg);">&#127829</p>
+    <p  style="font-size: 7rem; position: absolute; left: 80%; bottom: 40%; transform: rotate(30deg);">&#127829</p>
+    <p  style="font-size: 4rem; position: absolute; left: 90%; bottom: 80%; transform: rotate(-30deg);">&#127829</p>
+    <p  style="font-size: 3rem; position: absolute; left: 50%; bottom: 30%; transform: rotate(190deg);">&#127829</p>
+    <p  style="font-size: 5rem; position: absolute; left: 85%; bottom: 10%; transform: rotate(100deg);">&#127829</p>
+    <p  style="font-size: 3rem; position: absolute; left: 50%; bottom: 80%; transform: rotate(290deg);">&#127829</p>
+    <p  style="font-size: 3rem; position: absolute; left: 80%; bottom: -50%; transform: rotate(290deg);">&#127829</p>
+    <p  style="font-size: 5rem; position: absolute; left: 60%; bottom: -20%; transform: rotate(20deg);">&#127829</p>
+    <p  style="font-size: 5rem; position: absolute; left: 40%; bottom: -70%; transform: rotate(20deg);">&#127829</p>
+    <p  style="font-size: 7rem; position: absolute; left: 30%; bottom: -20%; transform: rotate(20deg);">&#127829</p> -->
+    <p  style="font-size: 10rem; position: absolute; left: 30%; bottom: -20%; transform: rotate(20deg);">&#127829</p>
+    <p  style="font-size: 9rem; position: absolute; left: 60%; bottom:  20%; transform: rotate(70deg);">&#127829</p>
+    <p  style="font-size: 7rem; position: absolute; left: 85%; bottom:  70%; transform: rotate(90deg);">&#127829</p>
+  </figure>
+</body>
+</html>
