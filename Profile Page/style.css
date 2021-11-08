@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: cursive;
+}
+
+
+header {
+  margin: 10px 0 0 0;
+    /* background: salmon; */
+}
+.header-container {
+  margin: auto;
+  width: 90%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.header-container div p:nth-child(1){
+  text-decoration: underline;
+}
+.portrait {
+  /* background: seagreen; */
+  width: 15em;
+  transition: width .2s ease-in-out;
+}
+.portrait:hover {
+  width: 20em;
+  cursor: pointer;
+}
+.biodata-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.profilename h2{
+  margin: 0 0 5px 0;
+}
+.profilename p {
+  margin: 0 0 1px 0;
+}
+
+
+.section-container {
+  margin: auto;
+  width: 90%;
+}
+.section-container p {
+  margin: 70px 0 70px 0;
+}
+
+
+.footer-container {
+  margin: auto;
+  /* border: 2px solid red; */
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+video {
+  width: 319.5px;
+  height: 159px;
+}
+.footerimg-container {
+  /* border: 2px solid red; */
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footerimg {
+  /* border: 2px solid green; */
+  width: 8em;
+  transition: width .2s ease-in-out;
+}
+.footerimg:hover {
+  width: 10em;
+  cursor: pointer;
+}
+.attachments {
+  width: 20%;
+}
+legend {
+  font-weight: 600;
+}
+li, a {
+  list-style: none;
+}
