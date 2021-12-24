@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum 8 - Aditya Mufid Musyaffa</title>
+  <style>
+    * {
+      font-family: sans-serif;
+      box-sizing: border-box;
+      /* border: 3px solid red; */
+    }
+    body {
+      background-color: rgb(226, 229, 231);
+    }
+    section.lingkaran, section.rupiah, section.parkir, section.calculator {
+      margin: 25px auto;
+    }
+    .lingkaran button {
+      background-color: rgb(145, 255, 66);
+      border: none;
+      cursor: pointer;
+      padding: .5em;
+      box-shadow: inset 0 4px 6px 0 rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+    }
+    .lingkaran button:active {
+      box-shadow: inset 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+    .lingkaran, .rupiah, .calculator, .parkir {
+      background-color: #fefefe;
+      padding: 2rem;
+      width: 40%;
+      border-radius: 10px;
+      box-shadow: -1px 4px 10px 0 rgba(0, 0, 0, 0.2);
+      margin: 0 0 20px 0;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+    h4 {
+      background-color: yellow;
+      width: 50%;
+      text-align: center;
+    }
+    .parkir button {
+      background-color: rgb(145, 255, 66);
+      border: none;
+      cursor: pointer;
+      padding: .5em;
+      margin: 10px 0 20px 0;
+      box-shadow: inset 0 4px 6px 0 rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+    }
+    .parkir button:active {
+      box-shadow: inset 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+    table {
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <section class="nama" style="width: 50%;">
+    <h4>Aditya Mufid Musyaffa</h4>
+    <h4>1TI01</h4>
+    <h4>0110221030</h4>
+  </section>
+  
+  <!-- MENGHITUNG LUAS & KELILING LINGKARAN -->
+  <section class="lingkaran">
+    <h2>MENGHITUNG LUAS & KELILING LINGKARAN</h2>
+    <label for="jari2">Masukkan Jari - Jari :</label>
+    <input type="number" name="jari2" id="jari2">
+    <button onclick="luasDanKelLingkaran()">Calculate</button>
+    <h4 id="hasilLingkaran"></h4>
+  </section>
+  
+  <!-- SCRIPT LUAS & KELILING LINGKARAN -->
+  <script>
+    function luasDanKelLingkaran() {
+      // input
+      let jari2 = document.getElementById('jari2').value;
+      let rLuas = 3.14 * jari2**2;
+      let rKel = 2 * 3.14 * jari2;
+      // output
+      let hasil = document.getElementById('hasilLingkaran').innerHTML = 'Luas : ' + rLuas + '<br>' + 'Keliling : ' + rKel;
+      return hasil;
+    }
+  </script>
+  
+  
+
+  <!-- KONVERSI DOLLAR KE RUPIAH -->
+  <section class="rupiah">
+    <h2>KONVERSI DOLLAR KE RUPIAH</h2>
+    <label for="inputDollar">Masukkan dollar :</label>
+    <input type="number" name="inputDollar" id="inputDollar" oninput="rupiahToDollar()">
+    <h4 id="hasilRupiah"></h4>
+  </section>
+
+  <!-- SCRIPT DOLLAR KE RUPIAH -->
+  <script>
+    function rupiahToDollar() {
+      // input
+      let rupiah = document.getElementById('inputDollar').value;
+      let calc = rupiah * 14650;
+      // output
+      let hasil = document.getElementById('hasilRupiah').innerHTML = calc;
+      return hasil;
+    }
+  </script>
+
+
+
+  <!-- MENGHITUNG BIAYA PARKIR -->
+  <section class="parkir">
+    <h2>MENGHITUNG BIAYA PARKIR</h2>
+    <label for="jamMasuk">Jam Masuk :</label>
+    <input type="number" id="jamMasuk" name="jamMasuk">
+    <br>
+    <label for="jamKeluar">Jam Keluar :</label>
+    <input type="number" id="jamKeluar" name="jamKeluar">
+    <br>
+    <button id="calculateParkir" onclick="calculateParkir()">Calculate</button>
+    <table border="1">
+      <thead>
+        <tr>
+        <th>JAM MASUK</th>
+        <th>JAM KELUAR</th>
+        <th>LAMA</th>
+        <th>KELUARAN BIAYA</th>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- SCRIPT BIAYA PARKIR -->
+    <script>
+      function calculateParkir() {
+        let tbody = document.getElementsByTagName('tbody')[0];
+        let jamMasuk = document.getElementById('jamMasuk').value;
+        let jamKeluar = document.getElementById('jamKeluar').value;
+        let _2jamPertama = 3000;
+
+        if (jamKeluar - jamMasuk <= 2) {
+          tbody.innerHTML += 
+          `
+          <tr>
+            <td>${jamMasuk}</td>
+            <td>${jamKeluar}</td>
+            <td>${jamKeluar - jamMasuk + ' Jam'}</td>
+            <td>${_2jamPertama}</td>
+          </tr>
+          `
+        } else if (jamKeluar - jamMasuk > 2) {
+          tbody.innerHTML += 
+          `
+          <tr>
+            <td>${jamMasuk}</td>
+            <td>${jamKeluar}</td>
+            <td>${jamKeluar - jamMasuk + ' Jam'}</td>
+            <td>${(_2jamPertama + 1000*(jamKeluar-jamMasuk)) - 2000}</td>
+          </tr>
+          `
+        }
+      }
+    </script>
+  </section>
+
+
+
+  <!-- MENGHITUNG JUMLAH 2 BILANGAN -->
+  <section class="calculator">
+    <h2>MENGHITUNG JUMLAH 2 BILANGAN</h2>
+    <input type="number" id="op1" name="op1">
+    <p>+</p>
+    <input type="number" id="op2" name="op2" onchange="jumlahBilangan()">
+    <p>=</p>
+    <input type="number" id="equals" name="equals" value="0">
+  </section>
+
+  <!-- SCRIPT MENGHITUNG JUMLAH 2 BILANGAN -->
+  <script>
+    function jumlahBilangan() {
+      // input
+      let op1 = document.getElementById('op1').value;
+      let op2 = document.getElementById('op2').value;
+      let calc = Number(op1) + Number(op2);
+      // output
+      let hasil = document.getElementById('equals').value = calc;
+      return hasil;
+    }
+  </script>
+  
+</body>
+
+</html>
