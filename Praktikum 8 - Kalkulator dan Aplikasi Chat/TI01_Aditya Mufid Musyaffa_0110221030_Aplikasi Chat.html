@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya M - Aplikasi Chat</title>
+  <style>
+    .message-app {
+      margin: 20vh 0;
+      width: 30%;
+      height: 20vh;
+    }
+    li {
+      border: 1px solid black;
+      padding: .2em;
+      margin: .4em;
+      list-style: none;
+      width: 50%;
+      border-radius: 5px;
+      background-color: rgb(147, 238, 129);
+    }
+  </style>
+</head>
+<body>
+  <div class="message-app">
+    <ul id="messages"></ul>
+    <input type="textbox" id="textbox" placeholder="Type Here">
+    <button id="button">Send</button>
+  </div>
+
+  <script>
+    let messages = document.getElementById('messages');
+    let textbox = document.getElementById('textbox');
+    let button = document.getElementById('button');
+
+    button.addEventListener('click', function(){
+      let newMessage = document.createElement('li');
+      newMessage.textContent = textbox.value;
+      messages.appendChild(newMessage);
+      textbox.value = '';
+    })
+  </script>
+</body>
+</html>
