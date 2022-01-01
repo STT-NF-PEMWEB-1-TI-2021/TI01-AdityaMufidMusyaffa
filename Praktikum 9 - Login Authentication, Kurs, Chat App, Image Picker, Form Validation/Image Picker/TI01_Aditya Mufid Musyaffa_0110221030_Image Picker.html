@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya M - Image Picker</title>
+  <style>
+    img {
+      width: 30%;
+      display: block;
+      margin: 20px 0 0 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Image Picker</h2>
+  <select name="city" id="city">
+    <option value="jakarta">Jakarta</option>
+    <option value="madina">Madina</option>
+    <option value="tokyo">Tokyo</option>
+    <option value="new york">New York</option>
+    <option value="berlin">Berlin</option>
+    <option value="london">London</option>
+    <option value="seoul">Seoul</option>
+  </select>
+  <img src='Images/achmad-al-fadhli-LpFGfPjzIq0-unsplash.jpg'>
+
+  <script>
+    let city = document.getElementById('city');
+    let img = document.getElementsByTagName('img')[0];
+
+    city.addEventListener('input', () => {
+      switch (city.value) {
+        case 'jakarta' :
+          img.setAttribute('src', 'Images/achmad-al-fadhli-LpFGfPjzIq0-unsplash.jpg');
+          alert('JAKARTA');
+          break;
+        case 'madina' :
+          img.setAttribute('src', 'Images/yasmine-arfaoui-TBvVY4KNIQk-unsplash.jpg');
+          alert('MADINA');
+          break;
+        case 'tokyo' :
+          img.setAttribute('src', 'Images/jean-vella-icdVDptHxpM-unsplash.jpg');
+          alert('TOKYO');
+        break;
+        case 'new york' :
+          img.setAttribute('src', 'Images/luca-bravo-_QdFx92MO2U-unsplash.jpg');
+          alert('NEW YORK');
+        break;
+        case 'berlin' :
+          img.setAttribute('src', 'Images/florian-wehde-1uWanmgkd5g-unsplash.jpg');
+          alert('BERLIN');
+        break;
+        case 'london' :
+          img.setAttribute('src', 'Images/marcin-nowak-iXqTqC-f6jI-unsplash.jpg');
+          alert('LONDON');
+        break;
+        case 'seoul' :
+          img.setAttribute('src', 'Images/bundo-kim-PQD-ZeiXAUA-unsplash.jpg');
+          alert('SEOUL');
+        break;
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya M - Form Validation</title>
+</head>
+<style>
+  * {margin: 0; padding: 0; box-sizing: border-box;}
+  body {
+    background-color: rgb(157, 240, 130);
+    font-family: sans-serif;
+  }
+  form {
+    background-color: whitesmoke;
+    padding: 1em;
+    width: 30%;
+    margin: 1vh 1em;
+    border-radius: 5px;
+    float: left;
+  }
+  h2 {
+    margin: 0 15px;
+  }
+  .input-set {
+      background-color: white;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+      input {
+        display: block;
+        margin: 5px 0;
+        border-radius: 2px;
+        border: 1px solid black;
+        padding: 3px;
+      }
+    button {
+      margin: 0 15px;
+      padding: 10px;
+      background-color: rgb(63, 96, 216);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      width: 91%;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: rgb(55, 83, 186);
+    }
+  #displayData {
+    background-color: rgb(255, 255, 255);
+    padding: 1em;
+    width: fit-content;
+    margin: 1vh 5em;
+    border-radius: 5px;
+    display: none;
+    float: right;
+  }
+</style>
+<body>
+  <form action="" method="POST">
+    <h2>Form Validation</h2>
+    <div class="input-set">
+      <label for="username">Customer Name</label>
+      <input type="username" name="username" id="username" maxlength="30" placeholder="Enter fullname">
+    </div>
+    <div class="input-set">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Enter email">
+    </div>
+    <div class="input-set">
+      <label for="departureTime">Departure Time</label>
+      <input type="time" name="departureTime" id="departureTime" value="10:00">
+    </div>
+    <div class="input-set">
+      <label for="destination">Destination</label>
+      <input type="text" name="destination" id="destination" placeholder="Your dream place">
+    </div>  
+    <div class="input-set">
+      <label for="tickets">Amount of Tickets</label>
+      <input type="number" name="tickets" id="tickets" value="1" min="1" max="10">
+    </div>
+    <button id="button" type="submit">Submit</button>
+  </form>
+
+  <div id="displayData"></div>
+
+<script>
+  let button = document.getElementById('button');
+  let username = document.getElementById('username');
+  let email = document.getElementById('email');
+  let time = document.getElementById('departureTime');
+  let destination = document.getElementById('destination');
+  let tickets = document.getElementById('tickets');
+  let display = document.getElementById('displayData');
+  
+  button.addEventListener('click', submit);
+
+  function submit(e) {
+    e.preventDefault();
+    if (username.value == 'Aditya Mufid Musyaffa' && email.value == 'adit21030ti@student.nurulfikri.ac.id' && time.value == '10:00' && destination.value.toLowerCase() == 'tokyo' && tickets.value == 2) {
+      display.style.display = 'block'
+      display.innerHTML = `
+        <h2 style="margin: 0 0 10px 0; color: lightgreen">Your Data is valid</h2>
+        <h4 id="d-username">Name : ${username.value}</h4>
+        <h4 id="d-email">Email : ${email.value}</h4>
+        <h4 id="d-departuretime">Departure Time : ${time.value}</h4>
+        <h4 id="d-destination">Destination : ${destination.value}</h4>
+        <h4 id="d-tickets">Tickets : ${tickets.value}</h4>
+        </div>
+      `
+    } else {
+      display.style.display = 'block'
+      display.innerHTML = `
+      <h2 style = 'color: red'>Your Data is invalid</h2>
+      `
+    };
+  }
+</script>
+
+</body>
+
+</html>
